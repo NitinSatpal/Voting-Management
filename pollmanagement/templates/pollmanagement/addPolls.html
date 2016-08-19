@@ -1,0 +1,54 @@
+<!-- Add polls -->
+
+{% extends 'pollmanagement/base.html' %}
+
+{% block main_content %}
+
+{% if errors %}
+    <ul>
+        {% for error in errors %}
+        <li>{{ error }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+<form action="/savedsuccessfully/" method="POST">
+	{% csrf_token %}	
+	<label for="poll" style="width:10%">Question</label>
+	<input type="text" name="poll" id="poll" value="" style="width:60%;height:100px;" required/>
+	<br>
+	<br>
+	<br>
+
+	<label for="choiceOne" style="width:10%">Choice One</label>
+	<input type="text" name="choiceOne" id="choiceOne" value="" style="width:60%;height:40px;" required/>
+
+	<br>
+	<br>
+	<br>
+	<label for="choiceTwo" style="width:10%">Choice Two</label>
+	<input type="text" name="choiceTwo" id="choiceTwo" value="" style="width:60%;height:40px;" required/>
+
+	<br>
+	<br>
+	<br>
+	<label for="choiceThree" style="width:10%">Choice Three</label>
+	<input type="text" name="choiceThree" id="choiceThree" value="" style="width:60%;height:40px;" required/>
+
+	<br>
+	<br>
+	<br>
+
+	<label for="choiceFour" style="width:10%">Choice Four</label>
+	<input type="text" name="choiceFour" id="choiceFour" value="" style="width:60%;height:40px;" required/>
+
+	<br>
+	<br>
+	<br>
+
+	<div style="text-align:center">
+		<input type="submit" value="Add" />
+	</div>
+	
+</form>
+{% endblock %}

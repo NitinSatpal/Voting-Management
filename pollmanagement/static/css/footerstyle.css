@@ -1,0 +1,9 @@
+.footer {
+	position : absolute;
+    bottom : 0;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 90%;
+    min-height: 150px;
+    overflow: hidden;
+}

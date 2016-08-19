@@ -1,0 +1,14 @@
+<!-- Home page of the app -->
+
+{% extends 'pollmanagement/base.html' %}
+
+{% block main_content %}
+
+<h1> Welcome to Healthifyme Assignment page. </h1>
+{% if not user.is_authenticated %}
+	<h4> Please click <a href="accounts/login"> here </a> or on the 'Login' button</h4>
+
+	<h4> For registration click <a href="/registration/register"> here </a> or on the 'Register' button</h4>
+{% endif %}
+
+{% endblock %}

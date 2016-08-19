@@ -1,0 +1,22 @@
+<!-- Base page which will be etended by all other pages -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Healthifyme</title>
+	{% if not user.is_authenticated %}
+		{% include "pollmanagement/header.html" %}
+	{% elif user.is_superuser %}
+		{% include "pollmanagement/superuserHeader.html" %}
+	{% else %}
+		{% include "pollmanagement/loggedinHeader.html" %}
+	{% endif %}
+</head>
+<body>
+<div class="container">
+{% block main_content %}
+{% endblock %}
+</div>
+</body>
+
+</html>

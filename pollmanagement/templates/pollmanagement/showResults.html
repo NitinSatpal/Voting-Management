@@ -1,0 +1,26 @@
+{% extends 'pollmanagement/base.html' %}
+
+{% block main_content %}
+
+{% if latest_questions %}
+
+	<ul>
+		{% for question in latest_questions %}
+			<li><b>{{question.question_text}}</b></a></li>
+			{% for choice in question.choice_set.all %}
+				{{choice.choice_text}} : {{choice.votes}} vote{{ choice.votes | pluralize}} &nbsp;&nbsp;
+			{% endfor %}
+			<br>
+			<br>
+		{% endfor %}
+	</ul>
+
+{% else %}
+
+	<p>No question's yet. Please create few.</p>
+
+{% endif %}
+
+
+Back to <a href="/"> Home Page </a>
+{% endblock %}

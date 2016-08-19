@@ -1,0 +1,11 @@
+<!-- profile page of the user which will be show after login -->
+{% extends 'pollmanagement/base.html' %}
+
+{% block main_content %}
+
+<h1> Welcome {{request.user}} </h1>
+
+<h4>As a registered user, you are allowed to take the poll in our system.
+Please click <a href="/polls">here</a> to take the same.</h4>
+
+{% endblock %}

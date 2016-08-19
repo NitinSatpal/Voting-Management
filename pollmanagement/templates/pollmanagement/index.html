@@ -1,0 +1,21 @@
+<!-- Polls page -->
+
+{% extends 'pollmanagement/base.html' %}
+
+{% block main_content %}
+
+{% if latest_questions %}
+
+	<ul>
+		{% for question in latest_questions %}
+			<li><a href="{% url 'polls:details' question.id %}"><b>{{question.question_text}}</b></a></li>
+		{% endfor %}
+	</ul>
+
+{% else %}
+
+	<p>No question's yet. Please create few.</p>
+
+{% endif %}
+
+{% endblock %}
