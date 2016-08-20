@@ -17,4 +17,5 @@ urlpatterns = [
     url(r'^showresults/$', views.showresults),
     url(r'^addPoll/$', views.addPoll),
     url(r'^savedsuccessfully/$', views.commitPoll),
+    url(r'^search/', include('haystack.urls')),
 ]

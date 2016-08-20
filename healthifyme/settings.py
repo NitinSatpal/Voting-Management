@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 # pollmanagement is our app for polling
 INSTALLED_APPS = (
+    'haystack',
     'pollmanagement',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -52,6 +53,16 @@ MIDDLEWARE_CLASSES = (
 )
 
 ROOT_URLCONF = 'healthifyme.urls'
+
+
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'haystack.backends.elasticsearch_backend.ElasticsearchSearchEngine',
+        'URL': 'http://127.0.0.1:9200/',
+        'INDEX_NAME': 'haystack',
+        'TIMEOUT' : 60 
+    },
+}
 
 TEMPLATES = [
     {
